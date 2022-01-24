@@ -11,4 +11,4 @@ function staircase(n){
 		console.log(str+str1)	
 	}
 }
-staircase(5)
+staircase(15)
