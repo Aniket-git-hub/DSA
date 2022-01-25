@@ -1,5 +1,5 @@
-function sockMerchant(n, ar) {
-    let ones = {}, pairs = 0;
+function sockMerchant(n:number, ar:Array<number>):number {
+    let ones = {}, pairs:number = 0;
     for (let i = 0; i < n; i++) {
         if (ones.hasOwnProperty(ar[i])) {
             pairs++;

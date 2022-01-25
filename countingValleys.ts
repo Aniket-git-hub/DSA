@@ -1,4 +1,4 @@
-function countingValleys(steps, path) {
+function countingValleys(steps:number, path:String):number {
     // Write your code here
     let level = 0, count = 0
    	for(let i = 0; i < steps; i++){

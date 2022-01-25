@@ -1,7 +1,7 @@
 // Grading Students Problem from hackerrank
-function gradingStudents(grades) {
+function gradingStudents(grades:Array<number>):Array<number> {
     // Write your code here
-    let results = [];
+    let results:Array<number> = [];
     grades.forEach((grade)=>{
         if(grade >= 40 || grade+2 >= 40 || grade+1 >= 40){
             if((grade+2)%5 == 0){
@@ -18,7 +18,4 @@ function gradingStudents(grades) {
     return  results
 }
 
-let grades = [73,67,38,33]
-
-let result = gradingStudents(grades)
-console.log(result)
+console.log(gradingStudents([73,67,38,33]))
