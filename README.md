@@ -1,3 +1,15 @@
-# DSA Problems
-solving these problems from HackerRank and uploading my solutions over here.
-> [.] ** Problem solving **
+# Algorithms
+
+My repo
+
+- Problems
+- Sorting
+    [ ] bubble sort
+    ```javascript
+     Quick Sort```
+    [ ] Merge Sort
+    [ ] Insertion Sort
+    [ ] Selection Sort
+- Searching
+    [ ] Linear Search
+    [ ] Binary Search
