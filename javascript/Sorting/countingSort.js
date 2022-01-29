@@ -25,4 +25,4 @@ function countingSort(arr) {
 }
 let arr1 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 console.log(`Before sorting: ${arr1}
-    After sorting: ${countingSort(arr1)}`);
+After sorting: ${countingSort(arr1)}`);
