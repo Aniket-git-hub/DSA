@@ -1,4 +1,5 @@
 "use strict";
+//staircase function
 function staircase(n) {
     for (let i = 0; i < n; i++) {
         let str = '';
