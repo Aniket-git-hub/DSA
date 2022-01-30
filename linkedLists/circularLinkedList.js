@@ -4,34 +4,45 @@ class Node {
 		this.next = next
 	}
 }
-class linkedList{
+class circularLinkedList{
     constructor(){
         this.head = null
+        this.prev = null
+        this.size = 0
     }
+    // insert data to the start of the circular linkedList
     insert(data){
-        this.head = new Node(data, this.head)
         let current = this.head
-        while(current){
-            if(current.next == null){
-                current.next = this.head
-            }
-        }   
+        this.head = new Node(data, current)
+        this.size++
     }
+    // print the circular linkedList
     print(){
         let current = this.head
         while(current){
             console.log(current.value)
-            console.log("|")
             current = current.next
         }
     }
-    
+    // detect cycle in the circular linkedList
+    detectCycle(){
+        let slow = this.head
+        let fast = this.head
+        while(fast && fast.next){
+            slow = slow.next
+            fast = fast.next.next
+            if(slow === fast){
+                return true
+            }
+        }
+        return false
+    }
 }
-l = new linkedList()
+l = new circularLinkedList()
 l.insert(1)
 l.insert(2)
 l.insert(3)
 l.insert(4)
 l.insert(5)
 l.print()
-console.log(l)
+console.log(l.detectCycle())
