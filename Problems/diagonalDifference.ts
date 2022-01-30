@@ -4,7 +4,6 @@
  * The function is expected to return an INTEGER.
  * The function accepts 2D_INTEGER_ARRAY arr as parameter.
  */
-
 function diagonalDifference(arr:Array<Array<number>>):number {
     // Write your code here
     let leftDiagonal = 0;

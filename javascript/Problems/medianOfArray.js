@@ -8,4 +8,4 @@ function median(arr) {
     }
     return arr[mid];
 }
-console.log(median([4, 2, 1, 2, 3]));
+console.log(median([4, 2, 1, 2, 3])) // 2
