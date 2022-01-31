@@ -250,3 +250,110 @@ function deleteLast(head){
 	previous.next = null
 	return head
 }
+// function to delete the node at the given index of the linkedList when provided with the head and index and return the head
+function deleteAtIndex(head, index){
+	if(index === 0){
+		head = head.next
+		return head
+	}
+	let current = head
+	let previous = current
+	let count = 0
+	while(count < index){
+		previous = current
+		current = current.next
+		count++
+	}
+	previous.next = current.next
+	return head	
+}
+// function to reverse the linkedlist when head is provided and return the head
+function reverse(head){
+	let current = head
+	let previous = null
+	while(current){
+		let next = current.next
+		current.next = previous
+		previous = current
+		current = next
+	}
+	return previous
+}
+// function to print linkedlist data in reverse order when head is provided and return the head in recursion
+//complete function for all test cases
+function printReverse(head){
+	if(head.next){
+		printReverse(head.next)
+	}
+	console.log(head.value)
+}
+// function to print node value of the linkedlist when head is provided and return the head
+function print(head){
+	let current = head
+	while(current !== null){
+		console.log(current.value)
+		current = current.next
+	}
+	return head
+}
+// function to compare two linkedlists when head1 and head2 are provided and return the boolean value
+// with recursion
+function compare(head1, head2){
+	if(head1 === null && head2 === null){
+		return true
+	}
+	if(head1 === null || head2 === null){
+		return false
+	}
+	if(head1.value !== head2.value){
+		return false
+	}
+	return compare(head1.next, head2.next)
+}
+// function to merge two sorted linkedlist when head1 and head2 are provided and return the head
+// steps to megrge two sorted linkedlist when head1 and head2 are provided and return the head
+// 1. create a new linkedlist
+// 2. traverse the linkedlist1 and linkedlist2 and compare the value of the node and insert the value in the new linkedlist
+// 3. return the new linkedlist
+function merge(head1, head2){
+	let current1 = head1
+	let current2 = head2
+	let head = null
+	let previous = null
+	while(current1 !== null && current2 !== null){
+		if(current1.value < current2.value){
+			if(head === null){
+				head = current1
+			}
+			previous = current1
+			current1 = current1.next
+		}else{
+			if(head === null){
+				head = current2
+			}
+			previous = current2
+			current2 = current2.next
+		}
+	}
+	if(current1 === null){
+		previous.next = current2
+	}else{
+		previous.next = current1
+	}
+	return head
+}
+//function to get value of any position from the tial of the linkedlist when head is provided and return the value
+function getNthFromLast(head, n){
+	let current = head
+	let count = 0
+	while(count < n){
+		current = current.next
+		count++
+	}
+	let previous = head
+	while(current !== null){
+		current = current.next
+		previous = previous.next
+	}
+	return previous.value
+}
