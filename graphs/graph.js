@@ -1,11 +1,10 @@
 const graph = {
-    'A': ['B', 'C'],
-    'B': ['D','F', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': ['F'],
-    'F': []
-    
+  'A': ['B', 'C'],
+  'B': ['D','F', 'E'],
+  'C': ['F'],
+  'D': [],
+  'E': ['F'],
+  'F': []
 }
 //bfs traversal in graph
 const bfs = (graph, start) => {
