@@ -1,2 +1,2 @@
 "use strict";
-//binary Sort Algori
+//binary Sort Algorithms

@@ -1,36 +1,28 @@
 "use strict";
-/**
- * quick Sort Algorithm
- */
-function quickSort(arr) {
-    let low, high, pivot, left, right;
-    low = 0;
-    high = arr.length - 1;
-    pivot = arr[Math.floor((low + high) / 2)];
-    left = [];
-    right = [];
-    while (low <= high) {
-        while (arr[low] < pivot) {
-            low++;
-        }
-        while (arr[high] > pivot) {
-            high--;
-        }
-        if (low <= high) {
-            [arr[low], arr[high]] = [arr[high], arr[low]];
-            low++;
-            high--;
+// Quick Sort Algorithm
+function partition(arr, start, end) {
+    let pivot = arr[start];
+    while (start < end) {
+        while (arr[start] < pivot)
+            start++;
+        while (arr[end] > pivot)
+            end--;
+        if (start < end) {
+            let temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
         }
     }
-    if (low < high) {
-        left = quickSort(arr.slice(0, low));
-        right = quickSort(arr.slice(low, arr.length));
-        return left.concat(right);
-    }
-    return arr;
+    return start;
 }
-let a = [];
-for (let i = 0; i < 100; i++) {
-    a.push(Math.floor(Math.random() * 100));
+function quickSort(arr, start, end) {
+    if (start >= end)
+        return;
+    let pivot = partition(arr, start, end);
+    quickSort(arr, start, pivot - 1);
+    quickSort(arr, pivot + 1, end);
 }
-console.log(quickSort(a));
+let demoArr = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+console.log(demoArr);
+quickSort(demoArr, 0, demoArr.length - 1);
+console.log(demoArr);

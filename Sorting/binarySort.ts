@@ -1,1 +1,1 @@
-//binary Sort Algori
+//binary Sort Algorithms
