@@ -14,4 +14,4 @@ In this repo I am sharing algorithms that I am currenlty learning and algorithms
     * [x] Linear Search
     * [x] Binary Search
 
-You can visit my [blog]("https://letsbug.com/") [portfolio webiste]("https://hello.letsbug.com/")
+You can visit my [blog](https://letsbug.com/) [portfolio webiste](https://hello.letsbug.com/)
