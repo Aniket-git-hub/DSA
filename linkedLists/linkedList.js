@@ -195,13 +195,33 @@ class LinkedList {
 		}
 		return previous
 	}
+	// return the vlaue of node at given position from the tail
+	getNthFromTail(n) {
+		let current = this.head
+		let count = 0
+		while (current) {
+			current = current.next
+			count++
+		}
+		let position = count - n
+		current = this.head
+		while(position > 0) {
+			current = current.next
+			position--
+		}
+		return current.value
+	}
 }
 
 const l = new LinkedList()
 for (let i = 0; i < 10; i++) {
 	l.insert(i)
 }
-console.log(l.deleteAt(5))
+l.print()
+console.log(l.getNthFromTail(3))
+
+
+
 
 
 // function to insert data to the end of the linkedList when the head is provided and return the head
@@ -324,20 +344,62 @@ function merge(head1, head2) {
  	return head2
 }
 
-
-
-//function to get value of any position from the tial of the linkedlist when head is provided and return the value
-function getNthFromLast(head, n) {
+//function to get the value of node at the given position from the tail of the linkedlist when head is provided and return the value
+function getValueAtPositionFromTail(head, position) {
 	let current = head
 	let count = 0
-	while (count < n) {
-		current = current.next
+	while (current) {
 		count++
-	}
-	let previous = head
-	while (current !== null) {
 		current = current.next
-		previous = previous.next
 	}
-	return previous.value
+	current = head
+	while (count > position) {
+		current = current.next
+		count--
+	}
+	return current.value
+}
+
+//function to delete the duplicate value nodes from the sorted linked list
+function deleteDuplicate(head) {
+	let current = head
+	while (current) {
+		let next = current.next
+		while (next && next.data === current.data) {
+			next = next.next
+		}
+		current.next = next
+		current = next
+	}
+	return head
+} 
+
+// function to detect cycle in the linkedlist when head is provided and return the boolean value
+function detectCycle(head) {
+	if(head === null) return false
+	let slow = head
+	let fast = head
+	while (fast && fast.next) {
+		slow = slow.next
+		fast = fast.next.next
+		if (slow === fast) {
+			return true
+		}
+	}
+	return false
+}
+
+// function to find the merge point of linkedlist when head1 and head2 are provided and return the value of the node
+function findMergePoint(head1, head2) {
+	if(head1 === null || head2 === null) return null
+	let current1 = head1
+	let current2 = head2
+	while (current1 && current2) {
+		if (current1 === current2) {
+			return current1.value
+		}
+		current1 = current1.next
+		current2 = current2.next
+	}
+	return -1
 }
