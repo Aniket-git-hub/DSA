@@ -4,13 +4,13 @@ class Node {
 		this.next = next
 	}
 }
-class LinkedList{
-	constructor(){
+class LinkedList {
+	constructor() {
 		this.head = null
 		this.size = 0
 	}
 	//insert data to the start of the linkedList
-	insert(data){
+	insert(data) {
 		let current = this.head
 		this.head = new Node(data, current)
 		this.size++
@@ -19,10 +19,10 @@ class LinkedList{
 	// steps to insert data to the end of the linkedList
 	// 1. find the last node in the linkedList
 	// 2. insert data to the end of the linkedList
-	append(data){
+	append(data) {
 		let current = this.head
 		let previous = current
-		while(current){
+		while (current) {
 			previous = current
 			current = current.next
 		}
@@ -30,18 +30,18 @@ class LinkedList{
 		this.size++
 	}
 	//print the linkedList
-	print(){
+	print() {
 		let current = this.head
-		while(current){
+		while (current) {
 			console.log(current.value)
 			current = current.next
 		}
 	}
 	// delete the last node in the linkedList
-	deleteLast(){
+	deleteLast() {
 		let current = this.head
 		let previous = current
-		while(current.next){
+		while (current.next) {
 			previous = current
 			current = current.next
 		}
@@ -49,20 +49,20 @@ class LinkedList{
 		this.size--
 	}
 	// delete the first node in the linkedList
-	deleteFirst(){
+	deleteFirst() {
 		this.head = this.head.next
 		this.size--
 	}
 	// delete the node at the given index
-	deleteAt(index){
-		if(index === 0){
+	deleteAt(index) {
+		if (index === 0) {
 			this.deleteFirst()
-			return 
+			return
 		}
 		let current = this.head
 		let previous = current
 		let count = 0
-		while(count < index){
+		while (count < index) {
 			previous = current
 			current = current.next
 			count++
@@ -71,29 +71,29 @@ class LinkedList{
 		this.size--
 	}
 	// find the node at the given index
-	findAt(index){
+	findAt(index) {
 		let current = this.head
 		let count = 0
-		while(count < index){
+		while (count < index) {
 			current = current.next
 			count++
 		}
 		return current
 	}
 	// find the last node in the linkedList
-	findLast(){
+	findLast() {
 		let current = this.head
-		while(current.next){
+		while (current.next) {
 			current = current.next
 		}
 		return current
 	}
 	// find the middle node in the linkedList
-	findMiddle(){
+	findMiddle() {
 		let current = this.head
 		let previous = current
 		let count = 0
-		while(count < this.size / 2){
+		while (count < this.size / 2) {
 			previous = current
 			current = current.next
 			count++
@@ -101,11 +101,11 @@ class LinkedList{
 		return previous
 	}
 	// find the median node in the linkedList
-	findMedian(){
+	findMedian() {
 		let current = this.head
 		let previous = current
 		let count = 0
-		while(count < this.size / 2){
+		while (count < this.size / 2) {
 			previous = current
 			current = current.next
 			count++
@@ -113,50 +113,50 @@ class LinkedList{
 		return (current.value + previous.value) / 2
 	}
 	// find the kth node from the end of the linkedList
-	findKthFromEnd(k){
+	findKthFromEnd(k) {
 		let current = this.head
 		let count = 0
-		while(count < k){
+		while (count < k) {
 			current = current.next
 			count++
 		}
 		let previous = current
-		while(current){
+		while (current) {
 			current = current.next
 			previous = previous.next
 		}
 		return previous
 	}
 	// find the kth node from the start of the linkedList
-	findKthFromStart(k){
+	findKthFromStart(k) {
 		let current = this.head
 		let count = 0
-		while(count < k){
+		while (count < k) {
 			current = current.next
 			count++
 		}
 		return current
 	}
 	// find the kth node from the middle of the linkedList
-	findKthFromMiddle(k){
+	findKthFromMiddle(k) {
 		let current = this.head
 		let count = 0
-		while(count < this.size / 2){
+		while (count < this.size / 2) {
 			current = current.next
 			count++
 		}
 		let previous = current
-		while(count < k){
+		while (count < k) {
 			current = current.next
 			count++
 		}
 		return previous
 	}
 	// reverse the linkedList
-	reverse(){
+	reverse() {
 		let current = this.head
 		let previous = null
-		while(current){
+		while (current) {
 			let next = current.next
 			current.next = previous
 			previous = current
@@ -165,11 +165,11 @@ class LinkedList{
 		this.head = previous
 	}
 	// reverse the linkedList in groups of k
-	reverseK(k){
+	reverseK(k) {
 		let current = this.head
 		let previous = null
 		let count = 0
-		while(count < k){
+		while (count < k) {
 			let next = current.next
 			current.next = previous
 			previous = current
@@ -180,15 +180,15 @@ class LinkedList{
 		this.reverseK(k)
 	}
 	// return the length of the linkedList
-	length(){
+	length() {
 		return this.size
 	}
 	// return the middle node of the linkedList
-	middle(){
+	middle() {
 		let current = this.head
 		let previous = current
 		let count = 0
-		while(count < this.size / 2){
+		while (count < this.size / 2) {
 			previous = current
 			current = current.next
 			count++
@@ -198,17 +198,17 @@ class LinkedList{
 }
 
 const l = new LinkedList()
-for(let i = 0; i < 10; i++){
+for (let i = 0; i < 10; i++) {
 	l.insert(i)
 }
 console.log(l.deleteAt(5))
 
 
 // function to insert data to the end of the linkedList when the head is provided and return the head
-function insertAtEnd(head, data){
+function insertAtEnd(head, data) {
 	let current = head
-	while(current.next){
-		if(current.next === null){
+	while (current.next) {
+		if (current.next === null) {
 			current.next = new Node(data)
 			return head
 		}
@@ -218,17 +218,17 @@ function insertAtEnd(head, data){
 	return head
 }
 // function to insert data at head of the linkedlist when provided with the head and return the head
-function insertAtHead(head, data){
+function insertAtHead(head, data) {
 	let newHead = new Node(data)
 	newHead.next = head
 	return newHead
 }
 // function to insert data a specific index of the linkedList when provided with the head, index and data and return the head
-function insertAtIndex(head, index, data){
+function insertAtIndex(head, index, data) {
 	let current = head
 	let previous = current
 	let count = 0
-	while(count < index){
+	while (count < index) {
 		previous = current
 		current = current.next
 		count++
@@ -240,10 +240,10 @@ function insertAtIndex(head, index, data){
 }
 
 // function to delete the last node of the linkedList when provided with the head and return the head
-function deleteLast(head){
+function deleteLast(head) {
 	let current = head
 	let previous = current
-	while(current.next){
+	while (current.next) {
 		previous = current
 		current = current.next
 	}
@@ -251,27 +251,27 @@ function deleteLast(head){
 	return head
 }
 // function to delete the node at the given index of the linkedList when provided with the head and index and return the head
-function deleteAtIndex(head, index){
-	if(index === 0){
+function deleteAtIndex(head, index) {
+	if (index === 0) {
 		head = head.next
 		return head
 	}
 	let current = head
 	let previous = current
 	let count = 0
-	while(count < index){
+	while (count < index) {
 		previous = current
 		current = current.next
 		count++
 	}
 	previous.next = current.next
-	return head	
+	return head
 }
 // function to reverse the linkedlist when head is provided and return the head
-function reverse(head){
+function reverse(head) {
 	let current = head
 	let previous = null
-	while(current){
+	while (current) {
 		let next = current.next
 		current.next = previous
 		previous = current
@@ -281,16 +281,16 @@ function reverse(head){
 }
 // function to print linkedlist data in reverse order when head is provided and return the head in recursion
 //complete function for all test cases
-function printReverse(head){
-	if(head.next){
+function printReverse(head) {
+	if (head.next) {
 		printReverse(head.next)
 	}
 	console.log(head.value)
 }
 // function to print node value of the linkedlist when head is provided and return the head
-function print(head){
+function print(head) {
 	let current = head
-	while(current !== null){
+	while (current !== null) {
 		console.log(current.value)
 		current = current.next
 	}
@@ -298,60 +298,44 @@ function print(head){
 }
 // function to compare two linkedlists when head1 and head2 are provided and return the boolean value
 // with recursion
-function compare(head1, head2){
-	if(head1 === null && head2 === null){
+function compare(head1, head2) {
+	if (head1 === null && head2 === null) {
 		return true
 	}
-	if(head1 === null || head2 === null){
+	if (head1 === null || head2 === null) {
 		return false
 	}
-	if(head1.value !== head2.value){
+	if (head1.value !== head2.value) {
 		return false
 	}
 	return compare(head1.next, head2.next)
 }
-// function to merge two sorted linkedlist when head1 and head2 are provided and return the head
-// steps to megrge two sorted linkedlist when head1 and head2 are provided and return the head
-// 1. create a new linkedlist
-// 2. traverse the linkedlist1 and linkedlist2 and compare the value of the node and insert the value in the new linkedlist
-// 3. return the new linkedlist
-function merge(head1, head2){
-	let current1 = head1
-	let current2 = head2
-	let head = null
-	let previous = null
-	while(current1 !== null && current2 !== null){
-		if(current1.value < current2.value){
-			if(head === null){
-				head = current1
-			}
-			previous = current1
-			current1 = current1.next
-		}else{
-			if(head === null){
-				head = current2
-			}
-			previous = current2
-			current2 = current2.next
-		}
-	}
-	if(current1 === null){
-		previous.next = current2
-	}else{
-		previous.next = current1
-	}
-	return head
+
+
+//function to merge two linkedlist in sorted order when head1 and head2 are provided and return the head which passes all test cases
+function merge(head1, head2) {
+	if (head1 == null) return head2
+	if (head2 == null) return head1
+	if (head1.data < head2.data){
+		head1.next = mergeTwoSortedLinkedList(head1.next, head2)
+		return head1
+	} 
+	head2.next = merge(head1, head2.next)
+ 	return head2
 }
+
+
+
 //function to get value of any position from the tial of the linkedlist when head is provided and return the value
-function getNthFromLast(head, n){
+function getNthFromLast(head, n) {
 	let current = head
 	let count = 0
-	while(count < n){
+	while (count < n) {
 		current = current.next
 		count++
 	}
 	let previous = head
-	while(current !== null){
+	while (current !== null) {
 		current = current.next
 		previous = previous.next
 	}
