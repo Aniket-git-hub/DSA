@@ -3,14 +3,14 @@ In this repo I am sharing algorithms that I am currenlty learning and algorithms
 
 1. **Problems**
     These are coding challenges problems that I have solved
-2. __Sorting__
+1. __Sorting__
     * [x] bubble sort
     * [x] Quick Sort
     * [ ] Merge Sort
     * [ ] Insertion Sort
     * [ ] Selection Sort
     * [x] Counting Sort
-3. __Searching__
+1. __Searching__
     * [x] Linear Search
     * [x] Binary Search
     * [x] Exponential Sort
