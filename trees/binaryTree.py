@@ -1,3 +1,7 @@
+import queue
+from turtle import right
+
+
 class Node:
     def __init__(self,data):
         self.data = data
@@ -11,7 +15,18 @@ class binaryTree:
             self.root = Node(data)
         else:
             self.insertNode(data,self.root)
-        
+    def insertNode(self,data,node):
+        if(data < node.data):
+            if(node.left == None):
+                node.left = Node(data)
+            else:
+                self.insertNode(data,node.left)
+        else:
+            if(node.right == None):
+                node.right = Node(data)
+            else:
+                self.insertNode(data,node.right)
+
     #preOrder treversal of binary tree print data in one line
     def preOrder(self,root):
         if(root != None):
@@ -32,3 +47,30 @@ class binaryTree:
             self.inOrder(root.left)
             print(root.data,end=" ")
             self.inOrder(root.right)
+
+    #height of binary tree
+    def height(self,root):
+        if(root == None):
+            return 0
+        else:
+            lheight = self.height(root.left)
+            rheight = self.height(root.right)
+            if(lheight > rheight):
+                return lheight+1
+            else:
+                return rheight+1
+    # level order traversal of binary tree
+    def levelOrder(self,root):
+        queue = []
+        queue.append(root)
+        while(len(queue) > 0):
+            node = queue.pop(0)
+            print(node.data,end=" ")
+            if(node.left != None):
+                queue.append(node.left)
+            if(node.right != None):
+                queue.append(node.right)
+
+
+        
+        
