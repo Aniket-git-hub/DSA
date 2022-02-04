@@ -66,3 +66,48 @@ for(let i = 0; i <= 10; i++){
     dl.append(i)
 }
 dl.print()
+
+//function to insert data in dobubly linked list in sorted order recursively and return head optimized
+function sortedInsertRec(head, data){
+    if(head == null) return new Node(data)
+    if(head.value > data){
+        let node = new Node(data)
+        node.next = head
+        head.prev = node
+        return node
+    }
+    head.next = sortedInsertRec(head.next, data)
+    return head
+}
+// interative 
+function sortedInsert(head, data){
+    if(head == null) return new Node(data)
+    let current = head
+    let previous = current
+    while(current && current.value < data){
+        previous = current
+        current = current.next
+    }
+    let node = new Node(data)
+    if(!current){
+        previous.next = node
+    }
+    else{
+        previous.next = node
+        node.next = current
+    }
+    return head
+}
+// function to reverse a doubly linked list and return the head optimized
+function reverseDoublyLinkedList(head){
+    if(head == null) return null
+    let current = head
+    let previous = null
+    while(current){
+        let temp = current.next
+        current.next = previous
+        previous = current
+        current = temp
+    }
+    return previous
+}
