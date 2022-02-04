@@ -374,7 +374,20 @@ function deleteDuplicate(head) {
 	return head
 } 
 
-//optimized function to detect the cycle in the 
+//optimized function to detect the cycle in the linked list
+function HasCycle(head) {
+    if (head == null) return 0
+    let slow = head;
+    let fast = head;
+    while (fast != null && fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow == fast){
+            return 1;
+        }
+    }
+    return 0;
+}
 
 //function to find the merge point of two linked list optimized solution
 function FindMergeNode(headA,headB) {
