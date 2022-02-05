@@ -21,4 +21,4 @@ function gradingStudents(grades) {
     });
     return results;
 }
-console.log(gradingStudents([73, 67, 38, 33]));
+console.log(gradingStudents([73, 67, 38, 33])); // 
