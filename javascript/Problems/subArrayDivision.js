@@ -13,9 +13,8 @@ function birthday(s, d, m) {
     let count = 0;
     for (let i = 0; i < s.length; i++) {
         let subArray = s.slice(i, i + m);
-        if (subArray.reduce((a, b) => a + b) === d) {
+        if (subArray.reduce((a, b) => a + b) === d)
             count++;
-        }
     }
     return count;
 }
