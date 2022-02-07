@@ -53,12 +53,9 @@ class binaryTree:
         if(root == None):
             return 0
         else:
-            lheight = self.height(root.left)
-            rheight = self.height(root.right)
-            if(lheight > rheight):
-                return lheight+1
-            else:
-                return rheight+1
+            l = 1 + self.height(root.left)
+            r = 1 + self.height(root.right)
+            return l > r ? l : r
     # level order traversal of binary tree
     def levelOrder(self,root):
         queue = []
@@ -74,3 +71,15 @@ class binaryTree:
 
         
         
+#external function to find height of binary tree with ternay operator
+
+def height(root):
+    if(root == None):
+        return 0
+    else:
+        l = 1 + height(root.left)
+        r = 1 + height(root.right)
+        if(l > r):
+            return l
+        else:
+            return r

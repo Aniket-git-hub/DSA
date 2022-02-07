@@ -1,9 +1,12 @@
+
+// Constructor Class for Ndoes
 class Node {
 	constructor(value, next = null) {
 		this.value = value
 		this.next = next
 	}
 }
+// Wrapper Linked list class
 class LinkedList {
 	constructor() {
 		this.head = null
@@ -215,10 +218,16 @@ class LinkedList {
 
 const l = new LinkedList()
 for (let i = 0; i < 10; i++) {
-	l.insert(i)
+	l.insert(i) // 0 1 2 3 4 5 6 7 8 9
 }
-l.print()
-console.log(l.getNthFromTail(3))
+console.log("Print the linkedList")
+l.print() // 0 1 2 3 4 5 6 7 8 9
+l.deleteLast() // 0 1 2 3 4 5 6 7 8
+l.deleteFirst() // 1 2 3 4 5 6 7 8
+console.log("Print the linkedList After deleting last and first node")
+l.print() // 1 2 3 4 5 6 7 8 10
+l.append(10) // 1 2 3 4 5 6 7 8 10
+console.log(l.length()) //9
 
 
 
