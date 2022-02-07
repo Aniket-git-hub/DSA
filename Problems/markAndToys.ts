@@ -18,3 +18,4 @@ function maximumToys(prices:Array<number>, k:number):number {
     return prices.length
 }
 console.log(maximumToys([1,12,5,111,200,1000,10], 50));
+

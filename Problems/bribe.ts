@@ -4,9 +4,7 @@ function minimumBribes(q:Array<number>):void {
     for(let i = 0; i < q.length; i++) {
         if(q[i] - (i + 1) > 2) console.log("Too chaotic") 
         for(let j = Math.max(0, q[i] - 2); j < i; j++) {
-            if(q[j] > q[i]) {
-                result++
-            }
+            if(q[j] > q[i]) result++
         }
     }
     console.log(result)
