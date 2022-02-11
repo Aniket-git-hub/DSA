@@ -6,13 +6,12 @@ In this repo I am sharing algorithms that I am currenlty learning and algorithms
 1. __Sorting__
     * [x] bubble sort
     * [x] Quick Sort
-    * [ ] Quick Sort
+    * [x] Quick Sort
     * [ ] Merge Sort
-    * [ ] Insertion Sort
-    * [ ] Selection Sort
+    * [x] Insertion Sort
+    * [x] Selection Sort
     * [x] Counting Sort
 1. __Searching__
-3. __Searching__
     * [x] Linear Search
     * [x] Binary Search
     * [x] Exponential Sort
