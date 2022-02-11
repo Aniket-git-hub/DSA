@@ -15,6 +15,6 @@ function insertionSort(a) {
 let a = [12, 11, 13, 5, 6];
 console.log("Insertion Sort");
 console.log(`Given array:
- [ ${a} ]`);
+[ ${a} ]`);
 console.log(`Sorted Array: 
 [ ${insertionSort(a)} ]`);
