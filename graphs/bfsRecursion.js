@@ -13,6 +13,7 @@ const bfsRecursion = (graph, start) => {
     const visited = {};
     const queue = [start];
     visited[start] = true;
+    
     const bfsRecursionHelper = (node) => {
         if(queue.length) {
             const node = queue.shift();
@@ -29,5 +30,5 @@ const bfsRecursion = (graph, start) => {
     bfsRecursionHelper(start);
 }
 
-bfsRecursion(graph, 'A');
+bfsRecursion(graph, 'A');//A B C D E F
 const color = '#fdf6e3'

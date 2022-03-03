@@ -22,4 +22,4 @@ const dfsRecursionHelper = (graph, node, visited) => {
         }
     }
 }
-traverse(graph, 'A');
+traverse(graph, 'A');//A B C D E F

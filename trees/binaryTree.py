@@ -1,6 +1,7 @@
 from math import ceil
 import queue
 from random import random
+from turtle import isvisible
 class Node:
     def __init__(self,data):
         self.data = data
@@ -61,7 +62,7 @@ class binaryTree:
                 queue.append(node.left)
             if(node.right != None):
                 queue.append(node.right)
-
+    #height of binary tree
     def height(self,root):
         add = 0
         if root.left:
@@ -69,6 +70,31 @@ class binaryTree:
         if root.right:
             add = 1 + self.height(root.right)
         return add
+    
+    #huffman decoding
+    def huffmanDecoding(self,root,s):
+        if root.left == None and root.right == None:
+            return root.data
+        if s[0] == '0':
+            return self.huffmanDecoding(root.left,s[1:])
+        else:
+            return self.huffmanDecoding(root.right,s[1:])
+#Lowest common ancestor of binary tree
+def lca(self, root, n1, n2):
+    if root is None: # Base case
+        return None 
+    if root.data == n1 or root.data == n2: # Base case
+        return root
+    left = self.lca(root.left, n1, n2) # Recursive call for left subtree
+    right = self.lca(root.right, n1, n2) # Recursive call for right subtree
+    if left and right: # If both left and right subtrees contain one of the nodes
+        return root
+    # Return left subtree if left subtree contains node, else return right subtree
+    return left if left else right 
+
+
+        
+    
 
 #create a binary tree
 tree = binaryTree()
@@ -96,4 +122,12 @@ print()
 print("Height of binary tree is:")
 print(tree.height(tree.root))
 print()
+#huuffman decoding
+print("Huffman Decoding of binary tree is:")
+print(tree.huffmanDecoding(tree.root, "1001011"))
+print()
+
+#lowest common ancestor of binary tree
+print("Lowest Common Ancestor of binary tree is:")
+print(tree.lca(tree.root, 10, 20))
 
