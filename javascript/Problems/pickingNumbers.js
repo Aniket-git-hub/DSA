@@ -6,6 +6,16 @@
  * The function accepts INTEGER_ARRAY a as parameter.
  */
 function pickingNumbers(a) {
-
+    //  Write your code here
+    let max = 0;
+    let temp = 0;
+    for (let i = 0; i < a.length; i++) {
+        for (let j = i; j < a.length; j++) {
+            temp = a[j] - a[i];
+            if (temp > max) {
+                max = temp;
+            }
+        }
+    }
+    return max;
 }
-console.log(pickingNumbers([1, 1, 2, 2, 4, 4, 5, 5, 5]));

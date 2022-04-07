@@ -1,17 +1,19 @@
 # Algorithms
+
 In this repo I am sharing algorithms that I am currenlty learning and algorithms which I have learnt.
 
 1. **Problems**
     These are coding challenges problems that I have solved
-1. __Sorting__
-    * [x] bubble sort
+1. **Sorting**
+    * [x] bubble Sort
     * [x] Quick Sort
     * [x] Quick Sort
-    * [ ] Merge Sort
+    * [x] Merge Sort
     * [x] Insertion Sort
     * [x] Selection Sort
     * [x] Counting Sort
-1. __Searching__
+
+1. **Searching**
     * [x] Linear Search
     * [x] Binary Search
     * [x] Exponential Sort
