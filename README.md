@@ -18,4 +18,9 @@ In this repo I am sharing algorithms that I am currenlty learning and algorithms
     * [x] Binary Search
     * [x] Exponential Sort
 
+1. **Dynamic Programming**
+    * [x] fibonacci series
+        * [x] Without Memoization
+        * [x] With Meoization
+
 You can visit my [blog](https://letsbug.com/) [portfolio webiste](https://hello.letsbug.com/)

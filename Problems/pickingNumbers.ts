@@ -8,14 +8,13 @@
 function pickingNumbers(a: number[]) {
     //  Write your code here
     let max = 0;
-    let temp = 0;
     for (let i = 0; i < a.length; i++) {
-        for (let j = i; j < a.length; j++) {
-            temp = a[j] - a[i];
-            if (temp > max) {
-                max = temp;
+        for (let j = i + 1; j < a.length; j++) {
+            if (Math.abs(a[i] - a[j]) <= 1) {
+                max++
             }
         }
     }
     return max;
 }
+console.log(pickingNumbers([1, 1, 2, 2, 4, 4, 4, 5, 5, 5]));
