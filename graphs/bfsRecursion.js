@@ -5,30 +5,26 @@ const graph = {
     'D': [],
     'E': ['F'],
     'F': []
-    
 }
 
 //bfs traversal in graph using recursion
-const bfsRecursion = (graph, start) => {
+const traverse = (graph, start) => {
     const visited = {};
     const queue = [start];
     visited[start] = true;
-    
-    const bfsRecursionHelper = (node) => {
-        if(queue.length) {
+    const bfsRecursion = (node) => {
+        if (queue.length) {
             const node = queue.shift();
             console.log(node);
-            for(let neighbor of graph[node]) {
-                if(!visited[neighbor]) {
+            for (let neighbor of graph[node]) {
+                if (!visited[neighbor]) {
                     visited[neighbor] = true;
                     queue.push(neighbor);
-                    bfsRecursionHelper(neighbor);
+                    bfsRecursion(neighbor);
                 }
             }
         }
     }
-    bfsRecursionHelper(start);
+    bfsRecursion(start);
 }
-
-bfsRecursion(graph, 'A');//A B C D E F
-const color = '#fdf6e3'
+traverse(graph, 'A'); //A B C D E f

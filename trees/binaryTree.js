@@ -108,12 +108,21 @@ class Node {
             if (node.right != null) queue.push(node.right)
         }
     }
+    flatten() { 
+        let queue = []
+        queue.push(this)
+        while (queue.length > 0) {
+            let node = queue.shift()
+            if (node.left != null) queue.push(node.left)
+            if (node.right != null) queue.push(node.right)
+        }
+    }
 }
 
 let tree = new BinaryTree()
-for (let i = 0; i < 20; i++) {
-    tree.insert(Math.ceil(Math.random(1) * 200))
+for (let i = 0; i < 10; i++) {
+    let random = Math.ceil(Math.random(1) * 10)
+    console.log("Inserting the value: " + random)
+    tree.insert(random)
 }
-tree.inOrder()
-console.log(tree.height())
-tree.levelOrder()
+tree.preOrder()
