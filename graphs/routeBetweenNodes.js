@@ -36,11 +36,27 @@ const path = (graph, start, end) => {
 }
 
 
-console.log(path(testG, 'A', 'B'))
-console.log(path(testG, 'A', 'C'))
-console.log(path(testG, 'A', 'D'))
-console.log(path(testG, 'A', 'E'))
-console.log(path(testG, 'A', 'F'))
-console.log(path(testG, 'F', 'A'))
-console.log(path(testG, 'E', 'B'))
-console.log(path(testG, 'C', 'A'))
+// console.log(path(testG, 'A', 'B'))
+// console.log(path(testG, 'A', 'C'))
+// console.log(path(testG, 'A', 'D'))
+// console.log(path(testG, 'A', 'E'))
+// console.log(path(testG, 'A', 'F'))
+// console.log(path(testG, 'F', 'A'))
+// console.log(path(testG, 'E', 'B'))
+// console.log(path(testG, 'C', 'A'))
+
+// recursive DFS solution
+
+const traverse = (graph, start) => {
+    const visited = {};
+    dfsRecursion(graph, start, visited);
+}
+const dfsRecursion = (graph, node, visited) => {
+    if (!visited[node]) {
+        visited[node] = true;
+        console.log(node);
+        for (let neighbor of graph[node]) {
+            dfsRecursion(neighbor);
+        }
+    }
+}
