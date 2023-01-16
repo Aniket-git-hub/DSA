@@ -10,7 +10,6 @@ const c1 = makeCounter()
 
 c1()
 c1()
-c1()
 
 const c2 = makeCounter()
 
